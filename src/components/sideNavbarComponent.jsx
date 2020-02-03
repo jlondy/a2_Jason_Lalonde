@@ -8,20 +8,21 @@ class SideNavbar extends Component {
         super();
 
         this.state = {
-            closeNav: false
+            sideNav: false
         }
     }
-    
+    //change navigation state
     changeNav(){
-        this.setState({closeNav: !this.state.closeNav})
+        this.setState({sideNav: !this.state.sideNav})
     }
 
     render() { 
-        let newStyle = this.state.closeNav ? "openNav" : "closeNav";
+        //check if navigation is open or closed
+        let newStyle = this.state.sideNav ? "openNav" : "closeNav";
         return ( 
             <div className="bg-dark" style={{width: "100%"}}>
                 
-                {/* SLIDING NAVIGATION */}
+                {/* SLIDING NAVIGATION / SETTING STATE */}
                 <div className={newStyle}>
                     <h2 style={{paddingTop: "80px"}}><a href="profile" className="myListHeader">MY ACCOUNT</a></h2>
                     <ul>
@@ -51,6 +52,7 @@ class SideNavbar extends Component {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="leftNav">
+                                {/* OPEN OR CLOSE NAVIGATION BUTTON */}
                                 <span onClick={this.changeNav.bind(this)} className="glyphicon glyphicon-menu-hamburger"></span>
                                 <Link to="/profile"><h1 className="" style={{fontSize: "25px", float: "right",paddingBottom: "15px", color: "#1eb980",paddingLeft: "5px"}}>NUTREE</h1></Link>
                             </div>

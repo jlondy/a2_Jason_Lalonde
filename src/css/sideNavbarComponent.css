@@ -83,52 +83,37 @@ nav{
     height: 100%;
 }
 .closeNav{
+    transition: 0.2s;
     width: 0px;
     height: 100%;
     position: fixed;
     z-index: 1;
-    top: 0;
-    left: 0;
     background-color: #343a40;
     overflow-x: hidden;
-    transition: 0.5s;
-    
 }
 .openNav{
-    height: 100%;
+    overflow: auto;
+    transition: 0.2s; 
     width: 250px;
+    height: 100%;
     position: fixed;
     z-index: 1;
-    top: 0;
-    left: 0;
     background-color: #343a40;
     border-right: solid #1eb980;
-    overflow-x: hidden;
-    transition: 0.5s;
-
+}
+.openNav h2 {
+    transition: 0.2s;
+    padding-left: 10px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #1eb980;
+    display: block;
+    transition: 0.1s;
+}
+.openNav li:hover {
+    color: #1eb980;
 }
 
-  
-  .openNav h2 {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #1eb980;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .openNav li:hover {
-    color: #1eb980;
-  }
-  .closeNav h2 {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
 .header{
     width:100%;
 }
@@ -140,7 +125,6 @@ nav{
     text-decoration: none;
     color: #1eb980;
 }
-
 .myList:hover{
     text-decoration: none;
     color: #1eb980;

@@ -80,6 +80,9 @@ p{
 .link3{
     text-decoration: none;
 }
+.error{
+    color: red;
+}
 @media only screen and (min-width: 400px) {
     .row {
       padding-left: 15px;

@@ -3,17 +3,8 @@ import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import '../../css/login.css';
 import { Redirect } from "react-router-dom";
 
-const startState = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    username: "",
-    password: "",
-    firstNameError: "",
-    lastNameError: "",
-    emailError: "",
-    usernameError: "",
-    passwordError: "",
+const redirect = {
+    //REDIRECT TO PROFILE
     redirect: "/profile"
 }
 class Register extends Component {
@@ -30,22 +21,26 @@ class Register extends Component {
             emailError: "",
             usernameError: "",
             passwordError: "",
+            //STAY ON REGISTRATION
             redirect: null
          };
     }
+    //changing state on users input
     handleInformation = (newUser) => {
         this.setState({
             [newUser.target.id]: newUser.target.value
         })
     }
+    //registration form submit
     handleRegistration = (newUser) => {
         newUser.preventDefault();
-        const isValid = this.validateRegistrationForm();
-        if(isValid){
-            console.log(this.state);
-            this.setState(startState);        
+        //check if valid
+        if(this.validateRegistrationForm()){
+            //reset states (changing to new page)
+            this.setState(redirect);        
         }
     }
+    //validator to check users form submit
     validateRegistrationForm = () => {
         let firstNameError = "";
         let lastNameError =  "";
@@ -68,7 +63,7 @@ class Register extends Component {
         if(this.state.password.length < 6) {
             passwordError = "Invalid - Password must contain 6 letters or more";
         }
-        
+        //errors in users form submit
         if(firstNameError || lastNameError || usernameError || emailError || passwordError){
             this.setState({firstNameError});
             this.setState({lastNameError});
@@ -76,11 +71,14 @@ class Register extends Component {
             this.setState({usernameError});
             this.setState({passwordError});
             return false;
+        } 
+        //no errors
+        else{
+            return true;
         }
-        
-        return true;
     }
     render() { 
+        //CHANGE PAGE (form submission is good)
         if (this.state.redirect) {
             return <Redirect to={this.state.redirect} />
         }
@@ -101,28 +99,28 @@ class Register extends Component {
                             <form className="form" onSubmit={this.handleRegistration}>
                                 <label htmlFor="firstName" className="col-sm-2"><h3>Firstname</h3></label>
                                 <input id="firstName" onChange={this.handleInformation} type="text" className="input" placeholder="First Name"></input>
-                                <div style={{fontSize: "10px", color: "red"}}>
-                                    {this.state.firstNameError}
+                                <div className="error">
+                                    <p>{this.state.firstNameError}</p>
                                 </div>
                                 <label htmlFor="lastName" className="col-sm-2"><h3>Lastname</h3></label>
                                 <input id="lastName" onChange={this.handleInformation} type="text" className="input" placeholder="Last Name"></input>
-                                <div style={{fontSize: "10px", color: "red"}}>
-                                    {this.state.lastNameError}
+                                <div className="error">
+                                    <p>{this.state.lastNameError}</p>
                                 </div>
                                 <label htmlFor="email" className="col-sm-2"><h3>Email</h3></label>
                                 <input id="email" onChange={this.handleInformation} type="email" className="input" placeholder="Email"></input>
-                                <div style={{fontSize: "10px", color: "red"}}>
-                                    {this.state.emailError}
+                                <div className="error">
+                                    <p>{this.state.emailError}</p>
                                 </div>
                                 <label htmlFor="username" className="col-sm-2"><h3>Username</h3></label>
                                 <input id="username" onChange={this.handleInformation} type="text" className="input" placeholder="Username"></input>
-                                <div style={{fontSize: "10px", color: "red"}}>
-                                    {this.state.usernameError}
+                                <div className="error">
+                                    <p>{this.state.usernameError}</p>
                                 </div>
                                 <label htmlFor="password" className="col-sm-2"><h3>Password</h3></label>
                                 <input id="password" onChange={this.handleInformation} type="password" className="input" placeholder="Password"></input>
-                                <div style={{fontSize: "10px", color: "red"}}>
-                                    {this.state.passwordError}
+                                <div className="error">
+                                   <p>{this.state.passwordError}</p> 
                                 </div>
                                 <div className="buttonLogin">
                                     <button type="submit" className="myButtonLogin">Register</button>

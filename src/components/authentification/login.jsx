@@ -3,15 +3,10 @@ import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import '../../css/login.css';
 import { Redirect } from "react-router-dom";
 
-
-const startState = {
-    email: "",
-    password: "",
-    emailError: "",
-    passwordError: "",
+const redirect = {
+    //REDIRECT TO PROFILE
     redirect: "/profile"
 }
-
 class Login extends Component {
     constructor(props) {
         super(props)
@@ -20,42 +15,50 @@ class Login extends Component {
             password: "",
             emailError: "",
             passwordError: "",
+            //STAY ON LOGIN
             redirect: null
          };
     }
+    //changing state on users input
     handleAuthentification = (user) => {
         this.setState({
             [user.target.id]: user.target.value
         })
     }
+    //login form submit
     handleSignIn = (user) => {
         user.preventDefault();
-        const isValid = this.validateLoginForm();
-        if(isValid){
-            console.log(this.state);
-            this.setState(startState);
-           
+        //check if valid
+        if(this.validateLoginForm()){
+            //reset states (changing to new page)
+            this.setState(redirect);      
         }
     }
+    //validator to check users form submit
     validateLoginForm = () => {
         let emailError = "";
-        let passwordError =  "";
-
         if(!this.state.email.includes('@')) {
             emailError = "Invalid - Email should contain @";
         }
+
+        let passwordError =  "";
         if(this.state.password.length < 6) {
             passwordError = "Invalid - Password always contain 6 letters or more";
         }
+
+        //errors in users form submit
         if(emailError || passwordError){
             this.setState({emailError});
             this.setState({passwordError});
             return false;
         }
-        
-        return true;
+        //no errors
+        else{
+            return true;
+        }     
     }
     render() { 
+        //CHANGE PAGE (form submission is good)
         if (this.state.redirect) {
             return <Redirect to={this.state.redirect} />
         }
@@ -75,14 +78,14 @@ class Login extends Component {
                             <h3>To continue, please log in to Nutree</h3>
                             <form className="form" onSubmit={this.handleSignIn}>
                                 <label htmlFor="email" className="col-sm-2"><h3>Email</h3></label>
-                                <input id="email" onChange={this.handleAuthentification} type="text" className="input" placeholder="Email" value={this.state.email}></input>
-                                <div style={{fontSize: "10px", color: "red"}}>
-                                    {this.state.emailError}
+                                <input id="email" onChange={this.handleAuthentification} type="email" className="input" placeholder="Email" value={this.state.email}></input>
+                                <div className="error">
+                                    <p>{this.state.emailError}</p>
                                 </div>
                                 <label htmlFor="password" className="col-sm-2"><h3>Password</h3></label>
-                                <input id="password" onChange={this.handleAuthentification} type="password" className="input" placeholder="Password" value={this.state.username}></input>
-                                <div style={{fontSize: "10px", color: "red"}}>
-                                    {this.state.passwordError}
+                                <input id="password" onChange={this.handleAuthentification} type="password" className="input" placeholder="Password" value={this.state.password}></input>
+                                <div className="error">
+                                    <p>{this.state.passwordError}</p>
                                 </div>
                                 <div className="buttonLogin">
                                     <button type="submit" className="myButtonLogin">LOG IN</button>
