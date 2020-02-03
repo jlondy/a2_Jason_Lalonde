@@ -1,0 +1,88 @@
+.header{
+    width: 100%;
+    height: 75px;
+    background-color: red;
+}
+
+.form{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: white;
+}
+h3{
+    padding-top: 15px;
+    font-weight: bold;
+}
+.loginPage{
+    height: 100%;
+}
+.loginBody{
+    text-align: center;
+    padding-top: 15px;
+    
+}
+.registerBody{
+    text-align: center;
+    padding-bottom: 15px;
+}
+.input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #1eb980;
+    border-radius: 4px;
+    
+}
+.myButtonLogin{
+    border-radius: 16px;
+    background-color: #1eb980;
+    width: 50%;
+    padding: 12px 20px;
+}
+.buttonLogin{
+    padding-top: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+h4{
+    padding-bottom: 40px;
+    color: black;
+}
+.buttonRegister{
+    padding-top: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+.myButtonRegister{
+    border-radius: 16px;
+    width: 100%;
+    padding: 12px 20px;
+    border: solid 2px black;
+}
+.myButtonRegister:hover{
+    color: #1eb980;
+}
+p{
+    text-align: center;
+}
+.link1{
+    color:white;
+}
+.link2{
+    color:black;
+}
+.link1:hover{
+    color:black;
+}
+.link3{
+    text-decoration: none;
+}
+@media only screen and (min-width: 400px) {
+    .row {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }

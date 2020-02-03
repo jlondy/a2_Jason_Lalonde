@@ -1,0 +1,151 @@
+.myNav{
+    height: 100%;
+}
+li{ 
+    text-decoration: none;
+    color: white;
+    padding-bottom: 15px;
+    
+}
+li:hover{
+    color: #1eb980;
+}
+a{
+    size: 300px;
+}
+h4{
+    color: white;
+}
+.leftNav{
+    float: left;
+    color: white;
+    padding-bottom: 0;
+    padding-top: 25px;
+}
+.rightNav{
+    float: right;
+    padding-bottom: 0;
+    padding-top: 25px;
+    padding-left: 50px;
+}
+.glyphicon-menu-hamburger{
+    font-size: 25px;
+    padding-right: 5px;
+}
+.glyphicon-menu-hamburger:hover{
+    color: #1eb980;
+}
+.glyphicon-user{
+    color:white;
+    font-size: 25px;
+    padding-right: 10px;
+}
+.glyphicon-user:hover{
+    color: #1eb980;
+}
+.glyphicon-bell{
+    color: white;
+    font-size: 25px;
+    padding-right: 10px;
+}
+.glyphicon-bell:hover{
+    color: #1eb980;
+}
+.glyphicon-search{
+    color: white;
+    font-size: 25px;
+    padding-right: 10px;
+}
+.glyphicon-search:hover{
+    color: #1eb980;
+}
+.glyphicon-log-out{
+    color: white;
+    font-size: 25px;
+}
+.glyphicon-log-out:hover{
+    color: #1eb980;
+}
+input{
+    width: 30%;
+    padding-left: 5px;
+}
+
+.x{
+    color: white;
+    padding-left: 225px;
+    font-size: 30px;
+}
+h1:hover{
+    color: #1eb980;
+}
+nav{
+    height: 100%;
+}
+.closeNav{
+    width: 0px;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #343a40;
+    overflow-x: hidden;
+    transition: 0.5s;
+    
+}
+.openNav{
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #343a40;
+    border-right: solid #1eb980;
+    overflow-x: hidden;
+    transition: 0.5s;
+
+}
+
+  
+  .openNav h2 {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #1eb980;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .openNav li:hover {
+    color: #1eb980;
+  }
+  .closeNav h2 {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+.header{
+    width:100%;
+}
+.myList{
+    text-decoration: none;
+    color: white;
+}
+.myListHeader{
+    text-decoration: none;
+    color: #1eb980;
+}
+
+.myList:hover{
+    text-decoration: none;
+    color: #1eb980;
+}
+.myListHeader:hover{
+    text-decoration: none;
+    color: #1eb980;
+}
